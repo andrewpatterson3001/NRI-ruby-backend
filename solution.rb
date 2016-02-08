@@ -19,7 +19,7 @@ class Student
     @student_id = options[:student_id]
     @standard_mastery = options[:standard_mastery]
     @quizzes = []
-    add_quiz()
+    @quizzes << add_quiz()
   end
 
   def add_quiz
@@ -34,14 +34,18 @@ class Quiz
     @number_of_questions = options[:number_of_questions]
     @questions = []
     add_questions(@number_of_questions)
+    administer_quiz()
   end
 
   def add_questions(number_of_questions)
     number_of_questions.times do
-      new_question = Question.new(question_id:, difficulty:, standard_id:, strand_id:)
+      new_question = Question.new(question_id:example_questions[rand], difficulty:, standard_id:, strand_id:)
       @questions << new_question
   end
 
+  def administer_quiz
+    p "Here are your quiz questions"
+  end
 
 end
 
@@ -51,6 +55,7 @@ class Question
     @difficulty = options[:difficulty]
     @standard_id = options[:standard_id]
     @strand_id = options[:strand_id]
+    @student_response = {time_assigned: DateTime.now ,time_answered: null, body: null }
   end
 end
 
