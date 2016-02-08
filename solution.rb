@@ -45,6 +45,9 @@ class Quiz
 
   def administer_quiz
     p "Here are your quiz questions"
+    @questions.each do |question|
+      p question.question_id
+    end
   end
 
 end
@@ -63,17 +66,12 @@ end
 #Test Code
 #######assume Roy has student_id "1" and he enters "4" as the number of questions he wants to answer. He has never answered a quiz before so his standard mastery is null
 roy_quiz = Student.new(student_id:1)
-#Roy enters "4" on the command line
+#Roy enters "4" on the command line when prompted
 ####### The output should be something like [1,3,7,9]
 
-
-# question_1 = Question.new()
-# question_2 =
-# question_3 =
-# question_4 =
-# english_quiz.add_question(question_1)
-# english_quiz.add_question(question_2)
-# english_quiz.add_question(question_3)
-# english_quiz.add_question(question_4)
-
-
+#Code Reflections
+################################################
+#I didn't complete the challenge in 2 hours, so here are a few things I will improve upon:
+# - read up on attr readers, writers, and accessors so that I can ensure that the question data is provided to the quiz
+# - add a method to the quiz that allows the student to provide responses to the questions
+# - ensure that questions are chosen equally from strands and standards and that question challenge level is adjusted based on the students response
