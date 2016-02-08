@@ -6,3 +6,24 @@
 #2. Output from the user is a list of question id's that samples from strands and standards equally while adjusting question difficulty to the student's previous responses.
 ##################################
 
+class Student
+  def initialize(options = {})
+    @standard_mastery = options[:standard_mastery]
+    @quizzes = options[:quizzes]
+  end
+end
+
+class Quiz
+  def initialize(options = {})
+    @questions = options[:questions]
+  end
+end
+
+class Question
+  def initialize(options = {})
+    @question_id = options[:question_id]
+    @difficulty = options[:difficulty]
+    @standard_id = options[:standard_id]
+    @strand_id = options[:strand_id]
+  end
+end
