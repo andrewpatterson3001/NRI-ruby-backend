@@ -25,5 +25,7 @@ class Question
     @difficulty = options[:difficulty]
     @standard_id = options[:standard_id]
     @strand_id = options[:strand_id]
+    @assigned_hours_ago = options[:assigned_hours_ago]
+    @answered_hours_ago = options[:answered_hours_ago]
   end
 end
